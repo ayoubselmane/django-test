@@ -1,0 +1,25 @@
+.tr{
+  cursor: pointer;
+}
+
+
+.form{
+  display: grid;
+  flex: 1;
+  gap: 2px;
+}
+.formContent{
+  margin: auto;
+  width: 50%;
+  border: 3px solid rgb(8, 1, 103);
+  padding: 20px;
+  
+  align-items: center;
+}
+.btn{
+  width: fit-content;
+}
+.navbar{
+  margin-bottom: 10px;
+  padding-bottom: 0px;
+}
