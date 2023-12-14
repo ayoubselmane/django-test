@@ -1,16 +1,60 @@
-- Clone the repository
-- Create a virtual environment (example conda create -n yourenvname)
-- navigate via the terminal to the folder you cloned and run:
-- pip install -r requirement.txt to install all the packages you need to run the project
-- create a .env file inside the receipt_tracker directory where you put you credential data for example to use a postgres database (uncomment it on settings.py DATABASES) you need the following:
--SECRET_KEY=django-insecure-728k0bs%91o$^sp%aa_ji@2fmtwpdk7r1na#*$%l2+%)7tnpo3
- DB_NAME=database_name
- DB_USER=database_user
- DB_PASSWORD=database_password
- DB_HOST=localhost
- DB_PORT=5432
-- run the development server to start the project, you can do so by:
-- python manage.py runserver
-- this will run it on your local machine, if you want to run it on your local network run:
-- python manage.py runserver 0.0.0.0:8000
-- add your local ip address to the allowed host (i have added the address of 192.168.1.10 as an example but add your own there) to let anyone on your newtork access the app.  
+# Project Documentation
+
+## Introduction
+This document provides an overview of the steps to set up and run the project.
+
+## Steps
+1. **Clone the Repository:** 
+    ```
+    git clone <repository_URL>
+    ```
+
+2. **Create a Virtual Environment:** 
+    ```
+    conda create -n yourenvname
+    ```
+
+3. **Navigate to the Cloned Folder:** 
+    ```
+    cd <folder_name>
+    ```
+
+4. **Install Required Packages:** 
+    ```
+    pip install -r requirement.txt
+    ```
+
+5. **Set Up Environment Variables:**
+    - Create a `.env` file in the `receipt_tracker` directory.
+    - Add the following credentials for a PostgreSQL database (uncomment in `settings.py` under `DATABASES`):
+        ```
+        SECRET_KEY=django-insecure-728k0bs%91o$^sp%aa_ji@2fmtwpdk7r1na#*$%l2+%)7tnpo3 
+        DB_NAME=database_name 
+        DB_USER=database_user 
+        DB_PASSWORD=database_password 
+        DB_HOST=localhost 
+        DB_PORT=5432
+        ```
+
+6. **Run the Development Server:** 
+    ```
+    python manage.py runserver
+    ```
+
+7. **To Run on Local Network:** 
+    ```
+    python manage.py runserver 0.0.0.0:8000
+    ```
+
+8. **Add Your Local IP to Allowed Hosts:** 
+    - Modify `settings.py` and add your IP address (e.g., `192.168.1.10`) to the `ALLOWED_HOSTS` list to enable network access:
+        ```python
+        ALLOWED_HOSTS = [
+            'localhost',
+            '127.0.0.1',
+            '192.168.1.10',  # Add your IP here
+        ]
+        ```
+
+## Conclusion
+Follow these steps to effectively set up and run the project on your local machine or network.
