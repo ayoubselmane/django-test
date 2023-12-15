@@ -13,4 +13,3 @@ class ReceiptFormOut(forms.ModelForm):
     class Meta:
         model = Receipt
         fields = ['user','store','items_list','purchase_date','amount']
-

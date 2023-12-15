@@ -16,6 +16,9 @@ SECRET_KEY = env("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+DATE_INPUT_FORMATS = ['%d-%m-%Y']
+USE_L10N = False
+
 ALLOWED_HOSTS = ['localhost','192.168.1.10']
 
 
@@ -123,7 +126,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
-
+print(os.path.join(BASE_DIR, 'static'))
 
 
 # Default primary key field type
