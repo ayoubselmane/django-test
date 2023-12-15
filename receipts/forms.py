@@ -8,4 +8,9 @@ class ReceiptForm(forms.ModelForm):
         model = Receipt
         fields = ['store','items_list','purchase_date','amount']
 
+class ReceiptFormOut(forms.ModelForm):
+    # specify the name of model to use
+    class Meta:
+        model = Receipt
+        fields = ['user','store','items_list','purchase_date','amount']
 

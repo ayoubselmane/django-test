@@ -5,7 +5,6 @@
 <div class="formContent">
     {% if form.instance.id %}
     <form class="form" method="post" action="{% url 'edit' form.instance.id %}">
-    <form class="form" method="post" action="{% url 'home'  %}">
     {% else %}
     <form class="form" method="post" action="{% url 'home' %}">
     {% endif%}

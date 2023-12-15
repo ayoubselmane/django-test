@@ -1,0 +1,25 @@
+{% extends 'receipts/base.html' %}
+
+{% block content %}
+
+    <form class="formContent" method="post" action="{% url "register" %}">
+        {% if form.errors %}
+
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <p>There were some error with your code</p>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        {% endif %}
+        
+        {{form.as_p}}
+        
+        {% csrf_token %}
+
+                
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+    </form>
+
+{% endblock %}
