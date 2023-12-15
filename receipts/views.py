@@ -1,7 +1,6 @@
 from django.shortcuts import render, HttpResponse , redirect
 from .models import Receipt
-from .forms import ReceiptForm, ReceiptFormOut
-from django.contrib.auth.mixins import LoginRequiredMixin
+from .forms import ReceiptForm
 
 
 # this is the view for the page where we list the receipts of each user
@@ -32,6 +31,8 @@ def create_receipt(request):
 
 # simply deleting a receipt
 def delete_receipt(request, id):
+    if request.user.id is None:
+        return redirect('home')
     Receipt.objects.get(id=id).delete()
     
     return redirect('home')
@@ -39,6 +40,10 @@ def delete_receipt(request, id):
 
 # edeting a receipt
 def edit_receipt(request, id):
+    if request.user.id is None:
+        return redirect('home')
+    # if not request.user.is_authenticated():
+    #     return redirect('home')
     # checking whether this is the edit link in the main page or that of the form page
     if request.method == 'GET':
         # since it is a get request the link of the main page was clicked
@@ -61,6 +66,8 @@ def edit_receipt(request, id):
         return redirect('home')
 
 def details(request, id):
+    if request.user.id is None:
+        return redirect('home')
     # getting the receipt the user wants its details 
     data = Receipt.objects.get(id=id)
     # passing the receipt object to the html page as context
